@@ -1,0 +1,6 @@
+<!-- Show Sidebar only when logged in and not on login/register pages -->
+<app-sidebar *ngIf="showSidebar"></app-sidebar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

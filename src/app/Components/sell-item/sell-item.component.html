@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Sell Your Product</h2>
+    
+    <form (submit)="onSell($event)">
+      <input type="text" placeholder="Title" [(ngModel)]="product.title" name="title" required />
+      <textarea placeholder="Description" [(ngModel)]="product.description" name="description" required></textarea>
+      <input type="number" placeholder="Price" [(ngModel)]="product.price" name="price" required />
+
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" required />
+      <img *ngIf="previewImage" [src]="previewImage" alt="Preview" width="100" />
+
+      <button type="submit">Sell</button>
+    </form>
+
+   
+</div>

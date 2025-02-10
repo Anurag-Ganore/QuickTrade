@@ -1,0 +1,17 @@
+
+
+.profit-card {
+    margin-top: 20px;
+    padding: 20px;
+    background: #4CAF50;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profit-amount {
+    font-size: 24px;
+}

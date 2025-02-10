@@ -1,0 +1,31 @@
+  <div class="app-layout">
+    <app-sidebar></app-sidebar>
+  
+    <div class="container">
+      <h2>My Orders</h2>
+        <div class="products-grid">
+            <div class="product-card" *ngFor="let p of itemsBought">
+                <img [src]="p.image" alt="Product Image" class="product-img" />
+                
+                <div class="product-info">
+                    <!-- Title & Price Row -->
+                    <div class="title-price-row d-flex">
+                        <h3 class="title">{{ p.title }}</h3>
+                        <p class="price">{{ p.price }} Rs.</p>
+                    </div>
+  
+                    <!-- Description Row -->
+                    <p class="description">{{ p.description }}</p>
+  
+                    <!-- Buttons -->
+                    <!-- <div class="button-group">
+                        <button class="add-to-cart" (click)="addToCart(p)">Add To Cart</button>
+                        <button class="buy-now" (click)="buyList(p)">Buy Now</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loader " *ngIf="isLoading"> </div>
+  </div>
+  

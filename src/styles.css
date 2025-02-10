@@ -1,0 +1,170 @@
+/* Dark Theme Background */
+/* body {
+  color: #1e1e2f;
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+} */
+
+/* Container Styling */
+.container {
+  margin-left: 320px;
+  max-width: 1100px;
+  /* margin: auto; */
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  background-color: #1e1e2f !important;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: white;
+  border-radius: 20px;
+  padding: 25px 15px;
+}
+
+/* Product Grid - 3 cards per row */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row for mobile */
+  }
+}
+
+/* Product Card */
+.product-card {
+  background: #29293d;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Product Image */
+.product-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #444;
+  border-radius: 8px;
+}
+
+/* Product Info */
+.product-info {
+  padding: 15px;
+}
+
+/* Title & Price in the same row */
+.title-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.price {
+  font-size: 18px;
+  color: #30c67c;
+  font-weight: bold;
+}
+
+/* Description Row */
+.description {
+  color: #b3b3cc;
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+/* Buttons */
+button {
+    padding: 10px 14px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Add to Cart Button - Deep Purple */
+.add-to-cart {
+    background-color: #5a4fcf; /* Dark purple */
+    color: white;
+}
+
+.add-to-cart:hover {
+    background-color: #4a42b1; /* Slightly darker purple */
+    transform: scale(1.1);
+}
+
+/* Buy Now Button - Teal Blue */
+.buy-now {
+    background-color: #2ea29c; /* Teal */
+    color: white;
+}
+
+.buy-now:hover {
+    background-color: #25847e; /* Darker teal */
+    transform: scale(1.1);
+}
+/* Loader Styling */
+.loader {
+  
+  margin-left: 135px;
+  width: 100px;
+  height: 100px;
+  border: 15px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #5a4fcf; /* Matching theme color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* stroke-width: 15px !important; */
+}
+
+/* Spinning Animation */
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

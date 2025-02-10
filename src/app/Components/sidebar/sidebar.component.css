@@ -1,0 +1,209 @@
+/* Sidebar Container */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #1e1e2f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 15px;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Sidebar Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.header .focus {
+  color: #ffcc00;
+}
+
+.header button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Sidebar Separator */
+.separator-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.separator {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Section */
+.navigation {
+  flex-grow: 1;
+}
+
+.section {
+  margin-bottom: 10px;
+}
+
+.title-wrapper {
+  padding: 10px 0;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+/* Sidebar Items */
+/* Sidebar Items */
+.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  background: transparent;
+}
+
+/* Icons */
+.item i {
+  font-size: 18px;
+  margin-right: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover & Active States */
+.item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.item:hover i {
+  transform: scale(1.1);
+}
+
+/* Active Link */
+.item.active {
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: bold;
+}
+
+/* Sidebar Links */
+.item a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease-in-out;
+}
+
+.item a:hover {
+  color: #ffcc00;
+}
+
+/* Tooltip */
+.item-tooltip {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.item:hover .item-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Footer Theme Switch */
+.footer {
+  padding-top: 10px;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch .item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.switch .item i {
+  margin-right: 6px;
+}
+
+.active {
+  width: 20px;
+  height: 20px;
+  background: #ffcc00;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Dark Mode */
+body.dark-theme {
+  background: #121212;
+  color: #ddd;
+}
+
+body.dark-theme .sidebar {
+  background: #181818;
+}
+
+body.dark-theme .switch .active {
+  transform: translateX(20px);
+}

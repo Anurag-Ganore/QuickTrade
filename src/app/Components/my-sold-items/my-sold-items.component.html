@@ -1,0 +1,30 @@
+
+<div class="app-layout">
+    <app-sidebar></app-sidebar>
+  
+    <div class="container">
+        <h2>My Sold Items</h2>
+
+        <div class="products-grid">
+            <div class="product-card" *ngFor="let p of mySoldItems">
+                <img [src]="p.image" alt="Product Image" class="product-img" />
+                
+                <div class="product-info">
+                    <!-- Title & Price Row -->
+                    <div class="title-price-row d-flex">
+                        <h3 class="title">{{ p.title }}</h3>
+                        <p class="price">{{ p.price }} Rs.</p>
+                    </div>
+  
+                    <!-- Description Row -->
+                    <p class="description">{{ p.description }}</p>
+                    <button (click)="onRemoveFromCart(p.id)" >
+                        Remove from Cart
+                      </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loader " *ngIf="isLoading"> </div>
+  </div>
+  

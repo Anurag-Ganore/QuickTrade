@@ -1,0 +1,87 @@
+<section class="sidebar">
+  <div class="header">
+    <a href="#"
+      ><span class="focus">Q</span><span class="unfocus">uick Trade</span></a
+    >
+    <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+  </div>
+  <div class="separator-wrapper">
+    <hr class="separator" />
+    <label for="minimize" class="minimize-btn">
+      <i class="fa-solid fa-angle-left"></i>
+    </label>
+  </div>
+  <div class="navigation">
+    <!-- <div class="section settings-section">
+        <div class="title-wrapper">
+          <span class="title">Products</span>
+        </div>
+        <ul class="items">
+          <li class="item">
+            <a href="#">
+              <i class="fa-solid fa-bell"></i>
+              <span class="item-text">Homepage</span>
+             
+            </a>
+          </li>
+          
+          
+          
+        </ul>
+      </div> -->
+    <div class="section main-section">
+      <div class="title-wrapper">
+        <span class="title"></span>
+      </div>
+      <ul class="items">
+        <li class="item" routerLink="homepage" (click)="navigateTo('homepage')">
+          <i class="fa-solid fa-house"></i>
+          <span class="item-text">Homepage</span>
+          <!-- <span class="item-tooltip">Sell Item</span> -->
+        </li>
+        <li
+          class="item"
+          routerLink="sell-item"
+          (click)="navigateTo('sell-item')"
+        >
+          <i class="fa-solid fa-house"></i>
+          <span class="item-text">Sell Item</span>
+          <!-- <span class="item-tooltip">Sell Item</span> -->
+        </li>
+
+        <li class="item" routerLink="my-cart" (click)="navigateTo('my-cart')">
+          <i class="fa-solid fa-user"></i>
+          <span class="item-text">My Cart</span>
+          <!-- <span class="item-tooltip">Account</span> -->
+        </li>
+        <li
+          class="item"
+          routerLink="items-bought"
+          (click)="navigateTo('items-bought')"
+        >
+          <i class="fa-solid fa-file"></i>
+          <span class="item-text">Items Bought</span>
+          <!-- <span class="item-tooltip">Posts</span> -->
+        </li>
+        <li
+          class="item"
+          routerLink="my-sold-items"
+          (click)="navigateTo('my-sold-items')"
+        >
+          <i class="fa-solid fa-calendar"></i>
+          <span class="item-text">My Sold Items</span>
+          <!-- <span class="item-tooltip">Schedules</span> -->
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+  <div class="footer">
+    <ul class="footer-menu">
+      <li class="item" (click)="logout()">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span class="item-text">Logout</span>
+      </li>
+    </ul>
+  </div>
+</section>
