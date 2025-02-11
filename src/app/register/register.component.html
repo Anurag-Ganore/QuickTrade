@@ -1,23 +1,90 @@
-<h1>Register</h1>
+<h1 style="text-align: center; color: black;">Register</h1>
 
-<div *ngIf="errorMessage" style="color: red;">
+<div *ngIf="errorMessage" style="color: red; text-align: center; margin-bottom: 10px;">
   {{ errorMessage }}
 </div>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
-    <input type="text" placeholder="Username" formControlName="username" required />
-  </div>
-  <div>
-    <input type="email" placeholder="Email" formControlName="email" required />
-  </div>
-  <div>
-    <input type="password" placeholder="Password" formControlName="password" required />
-  </div>
-  <div>
-    <button type="submit">Sign Up</button>
-  </div>
-</form>
+<div style="
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #252540;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <input type="text" placeholder="Username" formControlName="username" required style="
+        width: 90%;
+        padding: 12px;
+        margin: 12px 0;
+        border-radius: 6px;
+        border: 1px solid #555;
+        background: #2e2e4f;
+        color: white;
+        font-size: 16px;
+        outline: none;
+      " />
+    </div>
+    <div>
+      <input type="email" placeholder="Email" formControlName="email" required style="
+        width: 90%;
+        padding: 12px;
+        margin: 12px 0;
+        border-radius: 6px;
+        border: 1px solid #555;
+        background: #2e2e4f;
+        color: white;
+        font-size: 16px;
+        outline: none;
+      " />
+    </div>
+    <div>
+      <input type="password" placeholder="Password" formControlName="password" required style="
+        width: 90%;
+        padding: 12px;
+        margin: 12px 0;
+        border-radius: 6px;
+        border: 1px solid #555;
+        background: #2e2e4f;
+        color: white;
+        font-size: 16px;
+        outline: none;
+      " />
+    </div>
+    <div>
+      <button type="submit" style="
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: #4caf50;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+      " 
+      onmouseover="this.style.background='#43a047'" 
+      onmouseout="this.style.background='#4caf50'"
+      >Sign Up</button>
+    </div>
+  </form>
 
-<!-- Login Button -->
-<p>Already have an account? <a routerLink="login" (click)="navigateTo('/login')">Login here</a></p>
+  <p style="margin-top: 15px; font-size: 16px;">
+    Already have an account? 
+    <a routerLink="login" (click)="navigateTo('/login')" style="
+      color: #4caf50;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      cursor: pointer;
+    " 
+    onmouseover="this.style.color='#45a049'" 
+    onmouseout="this.style.color='#4caf50'">
+      Login here
+    </a>
+  </p>
+</div>

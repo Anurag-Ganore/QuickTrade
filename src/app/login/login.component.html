@@ -1,21 +1,71 @@
-<h1>Login</h1>
+<h1 style="text-align: center; color: black;">Login</h1>
 
 @if (errorMessage) {
-  <div style="color: red;">{{ errorMessage }}</div>
+  <div style="color: red; text-align: center; margin-bottom: 10px;">{{ errorMessage }}</div>
 }
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
-    <input type="text" placeholder="Email" formControlName="email" />
-  </div>
-  <div>
-    <input type="password" placeholder="Password" formControlName="password" />
-  </div>
-  <div>
-    <button type="submit">Sign In</button>
-  </div>
-</form>
+<div style="
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #252540;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <input type="text" placeholder="Email" formControlName="email" style="
+        width: 90%;
+        padding: 12px;
+        margin: 12px 0;
+        border-radius: 6px;
+        border: 1px solid #555;
+        background: #2e2e4f;
+        color: white;
+        font-size: 16px;
+        outline: none;
+      " />
+    </div>
+    <div>
+      <input type="password" placeholder="Password" formControlName="password" style="
+        width: 90%;
+        padding: 12px;
+        margin: 12px 0;
+        border-radius: 6px;
+        border: 1px solid #555;
+        background: #2e2e4f;
+        color: white;
+        font-size: 16px;
+        outline: none;
+      " />
+    </div>
+    <div>
+      <button type="submit" style="
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: #4caf50;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+      " 
+      onmouseover="this.style.background='#43a047'; this.style.transform='scale(1.05)';"
+      onmouseout="this.style.background='#4caf50'; this.style.transform='scale(1)';">
+        Sign In
+      </button>
+    </div>
+  </form>
 
-<!-- Register Button -->
-<p>Don't have an account? <a href="#" (click)="navigateTo('/register')">Register here</a></p>
-
+  <!-- Register Button -->
+  <p style="margin-top: 15px; font-size: 16px;">
+    Don't have an account? 
+    <a (click)="navigateTo('/register')" style="color: #4caf50; text-decoration: none; font-weight: bold; cursor: pointer;">
+      Register here
+    </a>
+  </p>
+</div>
