@@ -8,6 +8,7 @@ import { routes } from './app.routes';  // ✅ Import `routes` correctly
 import { FormsModule } from '@angular/forms'; // ✅ Import FormsModule
 import { RouterModule } from '@angular/router'; // ✅ Import RouterModule
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyCZagEXao9eeQSR_sUy40MkaIrAjOV5D9M",
   authDomain: "angular-firebase-app-afdc8.firebaseapp.com",
