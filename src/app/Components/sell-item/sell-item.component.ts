@@ -22,6 +22,7 @@ export class SellItemComponent implements OnInit {
   };
   previewImage: string | ArrayBuffer | null = null;
   products: any[] = [];
+  isLoading : boolean = false;
 
   constructor(private db: Database,private auth: Auth, private productService: ProductService) {} // ✅ Inject ProductService
 
@@ -47,35 +48,48 @@ export class SellItemComponent implements OnInit {
 
   async onSell(event: Event) {
     event.preventDefault(); // Prevent page reload
+    this.isLoading = true;
   
+    // ✅ Form validation
     if (!this.product.title || !this.product.description || this.product.price <= 0 || !this.product.image) {
       alert('Please fill in all fields and add an image.');
+      this.isLoading = false; // ❗ Stop loader
       return;
     }
   
     const user = this.auth.currentUser; // ✅ Get logged-in user
     if (!user) {
       alert('You must be logged in to sell a product.');
+      this.isLoading = false; // ❗ Stop loader
       return;
     }
   
-    const userId = user.uid; // ✅ Get User ID
+    try {
+      const userId = user.uid; // ✅ Get User ID
   
-    const newProductRef = push(ref(this.db, 'products')); // ✅ Public product list
-    const soldProductRef = push(ref(this.db, `mySoldList/${userId}`)); // ✅ Store under seller's UID
+      const newProductRef = push(ref(this.db, 'products')); // ✅ Public product list
+      const soldProductRef = push(ref(this.db, `mySoldList/${userId}`)); // ✅ Store under seller's UID
   
-    await set(newProductRef, this.product); // ✅ Store in public product list
-    await set(soldProductRef, this.product); // ✅ Store in seller's sold list
+      // ✅ Store in both places
+      await set(newProductRef, this.product);
+      await set(soldProductRef, this.product);
   
-    alert('Product added successfully!');
+      alert('Product added successfully!');
   
-    // ✅ Fetch updated products after adding a new one
-    this.products = await this.productService.getProducts();
-    
-    // ✅ Reset form
-    this.product = { title: '', description: '', price: 0, image: '' };
-    this.previewImage = null;
+      // ✅ Fetch updated products after adding a new one
+      this.products = await this.productService.getProducts();
+      
+      // ✅ Reset form
+      this.product = { title: '', description: '', price: 0, image: '' };
+      this.previewImage = null;
+    } catch (error) {
+      console.error('Error adding product:', error);
+      alert('Failed to add product. Please try again.');
+    } finally {
+      this.isLoading = false; // ✅ Stop loader in all cases
+    }
   }
+  
   
 
   // ✅ Delete product from Firebase & UI
