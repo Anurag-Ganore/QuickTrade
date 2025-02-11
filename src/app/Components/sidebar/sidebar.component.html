@@ -12,23 +12,7 @@
     </label>
   </div>
   <div class="navigation">
-    <!-- <div class="section settings-section">
-        <div class="title-wrapper">
-          <span class="title">Products</span>
-        </div>
-        <ul class="items">
-          <li class="item">
-            <a href="#">
-              <i class="fa-solid fa-bell"></i>
-              <span class="item-text">Homepage</span>
-             
-            </a>
-          </li>
-          
-          
-          
-        </ul>
-      </div> -->
+    
     <div class="section main-section">
       <div class="title-wrapper">
         <span class="title"></span>
@@ -78,10 +62,18 @@
   </div>
   <div class="footer">
     <ul class="footer-menu">
-      <li class="item" (click)="logout()">
+      <!-- Show Logout button if user is logged in -->
+      <li class="item" *ngIf="isAuthenticated" (click)="logout()">
         <i class="fa-solid fa-right-from-bracket"></i>
         <span class="item-text">Logout</span>
       </li>
+  
+      <!-- Show Login button if user is not logged in -->
+      <li class="item" *ngIf="!isAuthenticated" (click)="navigateTo('login')">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <span class="item-text">Login</span>
+      </li>
     </ul>
   </div>
+  
 </section>

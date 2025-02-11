@@ -6,13 +6,22 @@ import { AuthService } from '../../auth.service';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterModule], // ✅ Added RouterModule for navigation support
+  imports: [CommonModule, RouterModule],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements AfterViewInit {
   private authService = inject(AuthService);
+  isAuthenticated: boolean = false; // Track user authentication state
+
   constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.authService.authState$.subscribe((user) => {
+      this.isAuthenticated = !!user;
+    });
+  }
+  
 
   ngAfterViewInit(): void {
     const themeButton = document.getElementById("theme");
@@ -28,11 +37,9 @@ export class SidebarComponent implements AfterViewInit {
     this.router.navigateByUrl(`/${path}`);
   }
 
-
-
   logout() {
     this.authService.logout().then(() => {
-      this.router.navigate(['/login']);  // Redirect to login page
+      this.router.navigate(['/login']);
     });
   }
 }
